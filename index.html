@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,900;1,900&family=Press+Start+2P&family=Roboto:wght@300;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="back-img-left">
+            <div class="headerO">
+
+               <div class="headerOO">
+                    <div class="logo">
+                        <img src="./img/odin-lined.png" alt="">
+                    </div>
+                    
+                    <h1>ODIN</h1>
+               </div>
+            </div>
+            <div class="cddcas"><p class="ddcas">Photo by <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">Halie West</a></p></div>
+        </section>
+
+        <section class="form-right">
+           <div>
+                <p class="mrg">
+                    it's not a real project, you know you want somthink like this in your life to help you achive your great dreames. 
+                    sing up now to get started
+                </p>
+
+                <p class="mrg">
+                    You know you want to.
+                </p>
+                
+                <div>
+                    <form id="myform" action="">
+
+                        <fieldset>
+                            <div class="mrg">
+                                <h1>Let's do this</h1>
+
+                                <div class="frm-fld">
+                                    <div class="frm">
+                                        <label for="First_name">FIRST NAME</label>
+                                        <input type="text" id="First_name" required>
+                                    </div>
+                                    <div class="frm">
+                                        <label for="Last_name">LAST NAME</label>
+                                        <input type="text" id="Last_name" required>
+                                    </div>
+                                    <div class="frm">
+                                        <label for="Email"> EMAIL</label>
+                                        <input type="email" id="Email" required>
+                                    </div>
+                                    <div class="frm">
+                                        <label for="Phone_number">PHONE NUMBER</label>
+                                        <input type="tel"  id="Phone_number" required>
+                                    </div>
+                                    <div class="frm">
+                                        <label for="password">PASSWORD</label>
+                                        <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="Password" required>
+                                    </div>
+                                    <div class="frm">
+                                        <label for="confirm_password">CONFIRM PASSWORD</label>
+                                        <input type="password" id="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" id="Confirm_password" required>
+                                    </div>
+
+                                    <p id="error_message"></p>
+
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <div class="mrg">
+
+                            <button> Create an account </button>
+
+                            <p>Already have an account? <a href="">Log in</a></p>
+
+                        </div>
+                        
+
+                    </form>
+                </div>
+
+                <p>
+
+                </p>
+           </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('myform').addEventListener('submit', function(e) {
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirm_password').value;
+
+        if(password !== confirmPassword) {
+            e.preventDefault();  // Prevent form submission
+            document.getElementById('error_message').textContent = '*Passwords do not match.';
+            var password = document.getElementById('password');
+            var confirmPassword = document.getElementById('confirm_password');
+            confirmPassword.style.border = '2px solid red';
+            password.style.border = '2px solid red';
+
+
+            
+            
+        } else {
+            document.getElementById('error_message').textContent = '';
+        }
+});
+    </script>
+</body>
+</html>
